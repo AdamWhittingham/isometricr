@@ -3,7 +3,7 @@ Isometricr
 
 A tiny bit of JS for creating isometric grids inside DOM elements.
 
-See [example.html](exmaple.html) for a commented example.
+See [example.html](example.html) for a commented example.
 
 
 Quick Tour
