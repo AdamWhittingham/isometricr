@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <script src='./isometricr.js'></script>
+  </head>
+  <body>
+    <h1> Isometricr Example</h1>
+
+    <!-- Create an element to draw into -->
+    <div id='isometic-drawing'> </div>
+
+    <!-- Trigger the drawing inside your javascript -->
+    <script type='text/javascript'>
+      var onDOMLoaded = function(){
+        //Print helpful coordinates to the console as we go. Useful for debugging, off by default.
+        window.Isometricr.debug(true);
+
+        //Lets throw lots of triangles into the DOM!
+        //First, find the element (also works with jQuerry/Sizzle)
+        var gridArea = document.querySelectorAll('#isometic-drawing')[0];
+
+        //Then tell Isometricr to gridify that element with 18 columns and 15 rows
+        window.Isometricr.gridify(gridArea, 18, 15)
+      }
+
+      document.addEventListener('DOMContentLoaded', onDOMLoaded);
+    </script>
+
+    <!-- Start colouring in with CSS (or JS manipulating CSS!) -->
+    <style type="text/css" media="screen">
+      #isometic-drawing, svg{
+        width: 100%;
+        display: block;
+        height: 600px;
+      }
+
+      .top-tri {
+        fill: #306bac;
+      }
+
+      .left-tri {
+        fill: #003249;
+      }
+
+      .right-tri{
+        fill: #0d808e;
+      }
+
+      .bottom-tri {
+        fill: #141b41;
+      }
+
+      .iso-col-3 path {
+        fill: seagreen
+      }
+
+      .iso-row-4 path{
+        fill: slategrey;
+      }
+
+      .iso-row-5.iso-col-0 .top-tri,
+      .iso-row-5.iso-col-0 .right-tri,
+      .iso-row-5.iso-col-1 .left-tri,
+      .iso-row-5.iso-col-1 .bottom-tri,
+      .iso-row-6.iso-col-1 .top-tri,
+      .iso-row-6.iso-col-1 .right-tri,
+      .iso-row-6.iso-col-2 .left-tri,
+      .iso-row-6.iso-col-2 .bottom-tri,
+      .iso-row-7.iso-col-2 .top-tri,
+      .iso-row-7.iso-col-2 .right-tri
+      {
+        fill: yellow;
+      }
+    </style>
+  </body>
+</html>
